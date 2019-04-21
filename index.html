@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aprendiendo React / JS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Introducción / Recordatorio Javascript <i class="fab fa-js"></i></h1>
+        <hr>
+        <hr>
+
+        <h2>01-Variables <i class="fas fa-check"></i></h2>
+        <ul>
+            <li>var</li>
+            <li>let</li>
+            <li>const</li>
+        </ul>
+        <hr>
+
+        <h2>02-Scope <i class="fas fa-check"></i></h2>
+        <h3>Scope con var</h3>
+        <p>var musica = 'Rock';</p>
+        <p>if (musica) {</p>
+        <p>var musica = 'Grunge';</p>
+        <p>console.log('Dentro del IF: ', musica);</p>
+        <p>}</p>
+        <p>console.log('Fuera del IF: ', musica);</p>
+        <h3>Scope con let</h3>
+        <p>let musicaL = 'Rock';</p>
+        <p>if (musicaL) {</p>
+        <p>let musicaL = 'Grunge';</p>
+        <p>console.log('Dentro del IF: ', musicaL);</p>
+        <p>}</p>
+        <p>console.log('Fuera del IF', musicaL);</p>
+        <hr>
+
+        <h2>03-Template Strings<i class="fas fa-check"></i></h2>
+        <h3>Concatenar con Javascript</h3>
+        <p>const nombre = 'Jesús';</p>
+        <p>const trabajo = 'Ingeniero de Software';</p>
+        <p>console.log('Nombre: ' + nombre + ', Trabajo: ' + trabajo);</p>
+        <h3>Concatenar con Template Strings</h3>
+        <p>const nombre = 'Jesús';</p>
+        <p>const trabajo = 'Ingeniero de Software';</p>
+        <p>console.log(`Nombre: ${nombre}, Trabajo: ${trabajo}`);</p>
+        <h3>Creación de HTML sin y con Template String</h3>
+    </div>
+    <hr>
+    <div class="container" id="app"></div>
+    <script src="js/01-appVariables.js"></script>
+    <script src="js/02-appScope.js"></script>
+    <script src="js/03-appTemplateStrings.js"></script>
+</body>
+
+</html>
