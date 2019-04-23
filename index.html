@@ -41,7 +41,7 @@
         <p>console.log('Fuera del IF', musicaL);</p>
         <hr>
 
-        <h2>03-Template Strings<i class="fas fa-check"></i></h2>
+        <h2>03-Template Strings <i class="fas fa-check"></i></h2>
         <h3>Concatenar con Javascript</h3>
         <p>const nombre = 'Jesús';</p>
         <p>const trabajo = 'Ingeniero de Software';</p>
@@ -53,9 +53,111 @@
         <h3>Creación de HTML sin y con Template String</h3>
         <hr>
 
-        <h2>04-Funciones y tipos de Funciones<i class="fas fa-check"></i></h2>
+        <h2>04-Funciones y tipos de Funciones <i class="fas fa-check"></i></h2>
+        <h3>function declaration</h3>
+        <p>function saludar() {</p>
+        <p>console.log('Bienvenido ');</p>
+        <p>}</p>
+        <p>saludar();</p>
+        <h3>function expression</h3>
+        <p>const cliente = function(nombreCliente) {</p>
+        <p>console.log('Mostrando datos del cliente: ' + nombreCliente);</p>
+        <p>}</p>
+        <p>cliente('Cansandra');</p>
 
+        <h2>05-Funciones con Parámetros <i class="fas fa-check"></i></h2>
+        <h3>Parámetro por default en las funciones</h3>
+        <h4>* function declaration *</h4>
+        <p>function actividad(nombre = 'Walter White', actividad = 'Enseñar Química') {</p>
+        <p>console.log(`La persona ${nombre}, está realizando la actividad</p>
+        <p>${actividad}`);</p>
+        <p>}</p>
+        <p>actividad('Emmanuel', 'Aprender Javascript');</p>
+        <p>actividad('Casandra', 'Creando un sitio Web');</p>
+        <p>actividad();</p>
+        <h4>* function expression *</h4>
+        <p>const actividad2 = function(nombre = 'Walter White', actividad = 'Enseñar Química') {</p>
+        <p>console.log(`La persona ${nombre}, está realizando la actividad</p>
+        <p>${actividad}`);</p>
+        <p>}</p>
+        <p>actividad2('Emmanuel', 'Aprender Javascript');</p>
+        <p>actividad2('Casandra', 'Creando un sitio Web');</p>
+        <p>actividad2();</p>
 
+        <h2>06-Arrow Functions <i class="fas fa-check"></i></h2>
+        <h3>Sin Arrow Function</h3>
+        <p>let viajando = function(destino) {</p>
+        <p>return `Viajando a la ciudad de: ${destino}`;</p>
+        <p>}</p>
+        <p>let viaje;</p>
+        <p>viaje = viajando('París');</p>
+        <p>viaje = viajando('Londres');</p>
+        <p>viaje = viajando('Barcelona');</p>
+        <p>console.log(viaje);</p>
+        <h3>Con Arrow Function</h3>
+        <p>let viajando2 = (destino) => {</p>
+        <p>return `Viajando a la ciudad de: ${destino}`;</p>
+        <p>}</p>
+        <p>let viaje2;</p>
+        <p>viaje2 = viajando2('Alemania');</p>
+        <p>viaje2 = viajando2('Holanda');</p>
+        <p>viaje2 = viajando2('Madrid');</p>
+        <p>console.log(viaje2);</p>
+
+        <h2>07-Objetos / Object Literal <i class="fas fa-check"></i></h2>
+        <h3>Object Literal</h3>
+        <p>const persona = {</p>
+        <p>nombre: 'Juan',</p>
+        <p>profesion: 'Desarrollador Web',</p>
+        <p>edad: 500,</p>
+        <p>verdadero: true,</p>
+        <p>}</p>
+        <p>console.log(persona);</p>
+        <p>console.log(persona.nombre);</p>
+        <p>console.log(persona.profesion);</p>
+        <p>console.log(persona.edad);</p>
+        <p>console.log(persona['verdadero'])</p>
+        <h3>Object Constructor</h3>
+        <p>function Tarea(nombre, urgencia) {</p>
+        <p>this.nombre = nombre;</p>
+        <p>this.urgencia = urgencia;</p>
+        <p>}</p>
+        <p>const tarea1 = new Tarea('Aprender Javascript y ReactJs', 'Urgente');</p>
+        <p>console.log(tarea1);</p>
+        <p>console.log(tarea1.nombre);</p>
+        <p>console.log(tarea1.urgencia);</p>
+        <p>const tarea2 = new Tarea('Preparar Café', 'Urgente');</p>
+        <p>console.log(tarea2);</p>
+        <p>console.log(tarea2.nombre);</p>
+        <p>console.log(tarea2.urgencia);</p>
+        <p>const tarea3 = new Tarea('Pasear al Perro', 'Media');</p>
+        <p>console.log(tarea3);</p>
+        <p>console.log(tarea3.nombre);</p>
+        <p>console.log(tarea3.urgencia);</p>
+        <p>const tarea4 = new Tarea('Conocer a mis suegros', 'Baja');</p>
+        <p>console.log(tarea4);</p>
+        <p>console.log(tarea4.nombre);</p>
+        <p>console.log(tarea4.urgencia);</p>
+
+        <h2>08-Prototypes <i class="fas fa-check"></i></h2>
+        <h3>Definición de una Función cualquiera</h3>
+        <p>function mostrarInfoTarea(tarea, prioridad) {</p>
+        <p>return `La tarea ${this.tarea} tiene una prioridad de ${this.prioridad}`;</p>
+        <p>}</p>
+        <h3>Object Constructor y Prototype</h3>
+        <p>function Tarea(nombre, urgencia) {</p>
+        <p>this.nombre = nombre;</p>
+        <p>this.urgencia = urgencia;</p>
+        <p>}</p>
+        <p>Tarea.prototype.mostrarInfoTarea = function() {</p>
+        <p>return `La tarea ${this.nombre} tiene una prioridad de ${this.urgencia}`;</p>
+        <p>}</p>
+        <p>const tarea1 = new Tarea('Aprender Javascript y ReactJs', 'Urgente');</p>
+        <p>const tarea2 = new Tarea('Paser al Perro', 'Media');</p>
+        <p>console.log(tarea1);</p>
+        <p>console.log(tarea1.mostrarInfoTarea());</p>
+        <p>console.log(tarea2);</p>
+        <p>console.log(tarea2.mostrarInfoTarea());</p>
     </div>
     <hr>
     <div class="container" id="app"></div>
@@ -63,6 +165,10 @@
     <script src="js/02-appScope.js"></script>
     <script src="js/03-appTemplateStrings.js"></script>
     <script src="js/04-appFunciones.js"></script>
+    <script src="js/05-appFuncionesParametros.js"></script>
+    <script src="js/06-appArrowFunctions.js"></script>
+    <script src="js/07-appObjetos.js"></script>
+    <script src="js/08-appPrototypes.js"></script>
 </body>
 
 </html>
