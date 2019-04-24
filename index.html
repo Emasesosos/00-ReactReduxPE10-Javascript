@@ -160,35 +160,186 @@
         <p>console.log(tarea2.mostrarInfoTarea());</p>
 
         <h2>09-Object Destructuring <i class="fas fa-check"></i></h2>
-
+        <h3>* Normal *</h3>
+        <p>const aprendiendoJs = {</p>
+        <p>version: { </p>
+        <p>nueva: 'ES6+',</p>
+        <p>anterior: 'ES5',</p>
+        <p>},</p>
+        <p>frameworks: ['ReactJS', 'VueJS', 'AngularJS'],</p>
+        <p>}</p>
+        <p>console.log(aprendiendoJs);</p>
+        <p>console.log(aprendiendoJs.version);</p>
+        <p>console.log(aprendiendoJs.frameworks);</p>
+        <h3>* Destructuring *</h3>
+        <p>let {version, frameworks} = aprendiendoJs;</p>
+        <p>console.log(version);</p>
+        <p>console.log(frameworks);</p>
+        <p>let {nueva} = aprendiendoJs.version;</p>
+        <p>console.log(nueva);</p>
+        
         <h2>10-Object Literal Enhacement <i class="fas fa-check"></i></h2>
+        <p>const banda = 'Metallica';</p>
+        <p>const genero = 'Heavy Metal';</p>
+        <p>const canciones = ['Master of Puppets', 'Seek & Destroy', 'Enter Sandman'];</p>
+        <h3>* Sin Enhacement *</h3>
+        <p>const metallica = {</p>
+        <p> banda: banda,</p>
+        <p>genero: genero,</p>
+        <p>canciones: canciones</p>
+        <p>}</p>
+        <p>console.log(metallica);</p>
+        <h3>* Con Enhacement *</h3>
+        <p>const metallicaE = {banda, genero, canciones};</p>
+        <p>console.log(metallicaE);</p>
 
         <h2>11-Funciones en Objeto <i class="fas fa-check"></i></h2>
+        <h3>* Antes *</h3>
+        <p>const personaFO = {</p>
+        <p>nombre: 'Emmanuel',</p>
+        <p>trabajo: 'Desarrollador Web',</p>
+        <p>edad: 28,</p>
+        <p>musicaRock: true, </p>
+        <p>mostrarInfo: function() {</p>
+        <p>console.log(`${this.nombre} es ${this.trabajo} y su edad es ${this.edad}`);</p>
+        <p>}</p>
+        <p>}</p>
+        <p>personaFO.mostrarInfo();</p>
+        <h3>* Después *</h3>
+        <p>const personaFO2 = {</p>
+        <p>nombre: 'Emmanuel',</p>
+        <p>trabajo: 'Desarrollador Web',</p>
+        <p>edad: 28,</p>
+        <p>musicaRock: true, </p>
+        <p>mostrarInfo() {</p>
+        <p>console.log(`${this.nombre} es ${this.trabajo} y su edad es ${this.edad}`);</p>
+        <p>}</p>
+        <p>}</p>
+        <p>personaFO2.mostrarInfo();</p>
 
         <h2>12-Arreglos, map y Object.keys <i class="fas fa-check"></i></h2>
+        <h3>* Arreglos *</h3>
+        <p>const carrito = ['Producto 1', 'Producto 2', 'Producto 3'];</p>
+        <p>console.log(carrito);</p>
+        <p>console.log('* Como arreglo *');</p>
+        <p>const appContenedor = document.querySelector('#app');</p>
+        <p>let html = '';</p>
+        <p>carrito.forEach(producto => {</p>
+        <p>html += `<li>${producto}</li>`;</p>
+        <p>})</p>
+        <p>appContenedor.innerHTML = html;</p>
+        <h3>* Map *</h3>
+        <p>console.log('* Con map *')</p>
+        <p>carrito2 = ['Producto 1', 'Producto 2', 'Producto 3'];</p>
+        <p>carrito2.map(producto2 => {</p>
+        <p>return 'El producto es ' + producto2;</p>
+        <p>});</p>
+        <p>console.log(carrito2);</p>
+        <h3>* Con Object Keys *</h3>
+        <p>const personaOK = {</p>
+        <p>nombreOK: 'Emmanuel',</p>
+        <p>profesionOK: 'Desarrollador Web',</p>
+        <p>edadOK: 28</p>
+        <p>}</p>
+        <p>const {nombreOK} = personaOK;</p>
+        <p>console.log(personaOK);</p>
+        <p>console.log(nombreOK);</p>
+        <p>console.log(' * Con Keys *');</p>
+        <p>console.log(Object.keys(personaOK));</p>
 
         <h2>13-Spread Operator <i class="fas fa-check"></i></h2>
-
+        <h3>* Sin Spread Operator *</h3>
+        <p>let lenguajes = ['Javascript', 'PHP', 'Python'];</p>
+        <p>let frameworksSO = ['ReactJS', 'Laravel', 'Django'];</p>
+        <p>let combinacion = lenguajes.concat(frameworksSO);</p>
+        <p>console.log(combinacion);</p>
+        <h3>* Con Spread Operator *</h3>
+        <p>let combinacion2 = [...lenguajes, ...frameworksSO];</p>
+        <p>console.log(combinacion2);</p>
+        <h3>* Otro ejemplo *</h3>
+        <p>function suma(a, b, c) {</p>
+        <p>console.log(a + b + c);</p>
+        <p>}</p>
+        <p>const numeros = [1, 2, 3];</p>
+        <p>suma(...numeros);</p>
+        
         <h2>14-Métodos en Arreglos <i class="fas fa-check"></i></h2>
+        <p>const personas = [</p>
+        <p>{</p>
+        <p>nombre: 'Emmanuel',</p>
+        <p>edad: 28,</p>
+        <p>aprendiendo: 'Javascript'</p>
+        <p>},</p>
+        <p>{</p>
+        <p>nombre: 'Jardiel',</p>
+        <p>edad: 20,</p>
+        <p>aprendiendo: 'PHP'</p>
+        <p>},</p>
+        <p>{</p>
+        <p>nombre: 'Pablo',</p>
+        <p>edad: 32,</p>
+        <p>aprendiendo: 'AdobeXD'</p>
+        <p>},</p>
+        <p>{</p>
+        <p>nombre: 'Casandra',</p>
+        <p>edad: 24,</p>
+        <p>aprendiendo: 'Python'</p>
+        <p>},</p>
+        <p>{</p>
+        <p>nombre: 'Adriana',</p>
+        <p>edad: 33,</p>
+        <p>aprendiendo: 'ReactJS'</p>
+        <p>},</p>
+        <p>];</p>
+        <p>console.log(personas);</p>
+        <h3>Mayores de 28 años * filter *</h3>
+        <p>const mayores = personas.filter(persona => {</p>
+        <p>return persona.edad > 28;</p>
+        <p>});</p>
+        <p>console.log(mayores);</p>
+        <h3>Qué aprende Casandra y su edad * find *</h3>
+        <p>const casandra = personas.find(persona => {</p>
+        <p>return persona.nombre === 'Casandra';</p>
+        <p>});</p>
+        <p>console.log('Casandra está aprendiendo: ' + casandra.aprendiendo);</p>
+        <h3>Total de las edades de la personas * reduce *</h3>
+        <p>let total = personas.reduce((edadTotal, persona) => {</p>
+        <p>return edadTotal + persona.edad;</p>
+        <p>}, 0);</p>
+        <p>console.log(total / personas.length);</p>
 
+        <h2>15-Promises <i class="fas fa-check"></i></h2>
+
+        <div class="">
+            <h2>16-Promises con Ajax <i class="fas fa-check"></i></h2>
+            <div id="appPA"></div>
+        </div>
+
+        <h2>17-Clases <i class="fas fa-check"></i></h2>
+
+        <h2>18-Módulos en ES6+ <i class="fas fa-check"></i></h2>
     </div>
     <hr>
     <div class="container" id="app"></div>
+    <!-- <script src="js/01-appVariables.js"></script> -->
+    <!-- <script src="js/02-appScope.js"></script> -->
+    <!-- <script src="js/03-appTemplateStrings.js"></script> -->
+    <!-- <script src="js/04-appFunciones.js"></script> -->
+    <!-- <script src="js/05-appFuncionesParametros.js"></script> -->
+    <!-- <script src="js/06-appArrowFunctions.js"></script> -->
+    <!-- <script src="js/07-appObjetos.js"></script> -->
+    <!-- <script src="js/08-appPrototypes.js"></script> -->
+    <!-- <script src="js/09-appObjectDestructuring.js"></script> -->
+    <!-- <script src="js/10-appOLiteralEnhacement.js"></script> -->
+    <!-- <script src="js/11-appFuncionesEnObjeto.js"></script> -->
+    <!-- <script src="js/12-appArreglosMapObjectKeys.js"></script> -->
+    <!-- <script src="js/13-appSpreadOperator.js"></script> -->
+    <!-- <script src="js/14-appMetodosArreglos.js"></script> -->
+    <!-- <script src="js/15-appPromises.js"></script> -->
+    <!-- <script src="js/16-appPromisesAjax.js"></script> -->
+    <!-- <script src="js/17-appPOOClases.js"></script> -->
+    <script src="js/18-appTareas.js" type="module"></script>
 
-    <script src="js/01-appVariables.js"></script>
-    <script src="js/02-appScope.js"></script>
-    <script src="js/03-appTemplateStrings.js"></script>
-    <script src="js/04-appFunciones.js"></script>
-    <script src="js/05-appFuncionesParametros.js"></script>
-    <script src="js/06-appArrowFunctions.js"></script>
-    <script src="js/07-appObjetos.js"></script>
-    <script src="js/08-appPrototypes.js"></script>
-    <script src="js/09-appObjectDestructuring.js"></script>
-    <script src="js/10-appOLiteralEnhacement.js"></script>
-    <script src="js/11-appFuncionesEnObjeto.js"></script>
-    <script src="js/12-appArreglosMapObjectKeys.js"></script>
-    <script src="js/13-appSpreadOperator.js"></script>
-    <script src="js/14-appMetodosArreglos.js"></script>
 </body>
 
 </html>

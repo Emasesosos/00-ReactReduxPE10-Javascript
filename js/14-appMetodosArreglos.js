@@ -2,7 +2,8 @@
 console.log('***** 14-Métodos en Arreglos *****');
 // ********** Métodos en Arreglos ********** //
 
-const personas = [{
+const personas = [
+    {
         nombre: 'Emmanuel',
         edad: 28,
         aprendiendo: 'Javascript'
