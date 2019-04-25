@@ -3,7 +3,7 @@ console.log('***** 17-POO:Clases *****');
 // ********** POO:Clases ********** //
 
 // Programación orientada a objetos con clases
-class Tarea {
+export default class Tarea {
     constructor(nombre, prioridad) {
         this.nombre = nombre;
         this.prioridad = prioridad;
@@ -24,33 +24,11 @@ console.log(tarea2.mostrar());
 console.log(tarea3.mostrar());
 console.log(tarea4.mostrar());
 
-// Herencia: Heredando de una clase 
-// -> Hereda constructor y métodos de la clase padre
-class ComprasPendientes extends Tarea {
-    constructor(nombre, prioridad, cantidad) {
-        super(nombre, prioridad);
-        this.cantidad = cantidad;
-    }
-    mostrar2(){
-        return `${this.nombre} tiene una prioridad de ${this.prioridad} y la cantidad de ${this.cantidad}`;   
-    }
-    mostrar3(){
-        super.mostrar();
-        console.log(`y la cantidad de ${this.cantidad}`);   
-    }
-    hola(){
-        return 'Hola Casie';
-    }
-}
 
-let compra1 = new ComprasPendientes('Jabón','Urgente', 3);
-console.log(compra1.mostrar());
-console.log(compra1.mostrar2());
-compra1.mostrar3();
-console.log(compra1.hola());
 
 console.log('--------------------'); //20
 
+/*
 // ********** Importar, Exportar Módulos ********** //
 console.log('***** 18-Importar, Exportar Módulos *****');
 // ********** Importar, Exportar Módulos ********** //
@@ -78,5 +56,5 @@ export const tareaCompletada = () => {
 
 // const nombreTarea = 'Pasear al Perro';
 // export default nombreTarea;
-
+*/
 
